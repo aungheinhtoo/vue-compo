@@ -8,6 +8,13 @@ module.exports = {
     },
     colors: {
       primary: "#f7ba50",
+      secondary: "#C75100",
+      error: "#CC3123",
+      warning: "#DC5A00",
+      success: "#008700",
+      white: "#FFFFFF",
+      "primary-hover": "#f5ab2b",
+      "black-text": "#0C0D0D",
     },
   },
   plugins: [],

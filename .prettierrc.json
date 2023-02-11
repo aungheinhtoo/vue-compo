@@ -1,1 +1,6 @@
-{}
+{
+    "plugins": [
+        "plugin:prettier/recommended",
+        "prettier-plugin-tailwindcss"
+    ]
+}

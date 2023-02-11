@@ -8,14 +8,14 @@ import { RouterLink, RouterView } from "vue-router";
       alt="Vue logo"
       class="logo"
       src="@/assets/logo.svg"
-      width="125"
-      height="125"
+      width="30"
+      height="30"
     />
 
     <div class="wrapper">
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/">Buttons</RouterLink>
+        <RouterLink to="/alerts">Alerts</RouterLink>
       </nav>
     </div>
   </header>
@@ -62,7 +62,7 @@ nav a:first-of-type {
 @media (min-width: 1024px) {
   header {
     display: flex;
-    place-items: center;
+    justify-content: space-between;
     padding-right: calc(var(--section-gap) / 2);
   }
 
@@ -77,6 +77,8 @@ nav a:first-of-type {
   }
 
   nav {
+    display: flex;
+    justify-content: space-evenly;
     text-align: left;
     margin-left: -1rem;
     font-size: 1rem;
