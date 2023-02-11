@@ -11,12 +11,16 @@ import {
     faArrowRight,
     faArrowLeft,
     faXmark,
-    faCircleInfo
+    faCircleInfo,
+    faCircleCheck,
+    faCircleExclamation,
+    faTriangleExclamation,
 } from "@fortawesome/free-solid-svg-icons";
 import "./assets/main.css";
 
 const app = createApp(App);
-library.add(faArrowRight, faArrowLeft, faXmark, faCircleInfo);
+library.add(faArrowRight, faArrowLeft, faXmark, faCircleInfo, faCircleCheck,
+    faCircleExclamation, faTriangleExclamation);
 app.component("font-awesome-icon", FontAwesomeIcon);
 app.use(router);
 
