@@ -1,11 +1,12 @@
 <script setup lang="ts">
-defineProps(["title", "variant", "icon", "iconPosition"]);
+defineProps(["title", "color", "icon", "iconPosition", "variant"]);
 
-const getVariantSpecifics = (variant: string) => {
-  if (variant === "primary") {
-    return "bg-primary hover:bg-primary-hover text-black-text";
-  } else if (variant === "secondary") {
-    return "bg-white text-secondary outline outline-1 outline-solid";
+
+const getVariantColorSpecifics = (variant: string, color: string) => {
+  if (variant === "filled") {
+    return `bg-${color} hover:bg-${color}-hover text-${color === "primary" ? "black-text" : "white"}`;
+  } else if (variant === "outlined") {
+    return `bg-white text-${color} outline outline-1 outline-solid`;
   }
 };
 
@@ -21,22 +22,23 @@ const getPadding = (title: string) => {
   }
 };
 
-const getButtonClass = (variant: string, title: string) => {
-  return `${getVariantSpecifics(variant)} ${getPadding(title)}`;
-}
+const getButtonClass = (color: string, title: string, variant: string) => {
+  return `${getVariantColorSpecifics(variant, color)} ${getPadding(title)}`;
+};
 </script>
 
 <template>
   <!-- TODO: Drop shadow adjust -->
   <button
     class="box-content flex flex-row justify-center gap-2 rounded-lg font-body font-semibold text-base hover:drop-shadow"
-    :class="getButtonClass(variant, title)"
+    :class="getButtonClass(color, title, variant)"
   >
     <font-awesome-icon
       :icon="icon"
       v-if="icon"
       size="xl"
       :class="getOrder(iconPosition)"
+      fixed-width
     />
     <span v-if="title">{{ title }}</span>
   </button>

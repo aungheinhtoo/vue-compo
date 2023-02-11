@@ -2,5 +2,6 @@
     "plugins": [
         "plugin:prettier/recommended",
         "prettier-plugin-tailwindcss"
-    ]
+    ],
+    "tabWidth": 4
 }

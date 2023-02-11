@@ -8,40 +8,48 @@ import CustomButton from "@/components/CustomButton/CustomButton.vue";
       <div class="flex gap-3">
         <CustomButton
           title="Action"
-          variant="primary"
+          color="primary"
           icon="arrow-left"
-        ></CustomButton>
-        <CustomButton title="Action" variant="primary"></CustomButton>
+          variant="filled"
+         />
+        <CustomButton title="Action" color="primary"
+          variant="filled" />
         <CustomButton
           title="Action"
-          variant="primary"
+          color="primary"
           icon="arrow-right"
           icon-position="right"
-        ></CustomButton>
+          variant="filled"
+         />
         <CustomButton
-          variant="primary"
-          icon="arrow-right"
+          color="primary"
+          icon="fa-solid fa-arrow-left"
           icon-position="right"
-        ></CustomButton>
+          variant="filled"
+         />
       </div>
       <div class="flex gap-3">
         <CustomButton
           title="Action"
-          variant="secondary"
+          color="warning"
           icon="arrow-left"
-        ></CustomButton>
-        <CustomButton title="Action" variant="secondary"></CustomButton>
+          variant="outlined"
+         />
+        <CustomButton title="Action" color="warning"
+          variant="outlined" />
         <CustomButton
           title="Action"
-          variant="secondary"
+          color="warning"
           icon="arrow-right"
           icon-position="right"
-        ></CustomButton>
+          variant="outlined"
+         />
         <CustomButton
-          variant="secondary"
+          color="warning"
           icon="arrow-right"
           icon-position="right"
-        ></CustomButton>
+          variant="outlined"
+         />
       </div>
     </div>
   </main>
