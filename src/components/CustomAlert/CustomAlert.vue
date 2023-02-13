@@ -3,10 +3,9 @@ import CustomButton from '../CustomButton/CustomButton.vue';
 import { ButtonVariant, ButtonColor } from '../CustomButton/types';
 import { AlertColor } from "./types"
 
-// defineProps(["title", "color", "content"]);
 defineProps<{
   title?: string;
-  color: AlertColor;
+  color: AlertColor | string;
   content?: string;
 }>();
 const getIconClasses = (color: AlertColor) => {
@@ -35,21 +34,25 @@ const getAlertClasses = (color: AlertColor) => {
 </script>
 
 <template>
-  <div class="flex outline outline-1 rounded-[4px]" :class="getAlertClasses(color)">
-    <font-awesome-icon :icon="getIconClasses(color)" size="xl" fixed-width />
-    <div class="block">
-      <div class="font-body text-base text-black-text font-semibold">
-        {{ title }}
+  <div class="flex outline outline-1 rounded-[4px]" :class="getAlertClasses(color as AlertColor)">
+    <div class="flex justify-around gap-2 m-4">
+      <font-awesome-icon :icon="getIconClasses(color as AlertColor)" size="xl" fixed-width />
+      <div class="flex flex-col gap-4">
+        <div class="flex flex-col gap-2">
+          <div class="font-body text-base text-black-text font-semibold">
+            {{ title }}
+          </div>
+          <div class="font-body text-base text-black-text font-normal">
+            {{ content }}
+          </div>
+        </div>
+        <div class="flex sm:flex-row flex-col items-start gap-4">
+          <CustomButton title="Action" :color="color === AlertColor.INFO ? ButtonColor.WARNING : color" variant="outlined" />
+          <CustomButton title="Action" :color="color === AlertColor.INFO ? ButtonColor.PRIMARY : color" variant="filled" />
+        </div>
       </div>
-      <div class="font-body text-base text-black-text font-normal">
-        {{ content }}
-      </div>
-      <div class="flex gap-4">
-        <CustomButton title="Action" :color="color === AlertColor.INFO ? ButtonColor.WARNING : color" :variant="ButtonVariant.OUTLINED" />
-        <CustomButton title="Action" :color="color === AlertColor.INFO ? ButtonColor.PRIMARY : color" :variant="ButtonVariant.FILLED" />
-      </div>
+          <font-awesome-icon icon="fa-solid fa-xmark" size="sm" fixed-width class="text-gray" />
     </div>
-    <font-awesome-icon icon="fa-solid fa-xmark" size="xl" fixed-width class="text-gray" />
   </div>
 </template>
 

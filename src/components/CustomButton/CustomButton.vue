@@ -5,8 +5,8 @@ defineProps<{
   title?: string;
   color: ButtonColor | string;
   icon?: string;
-  iconPosition?: string;
-  variant?: ButtonVariant;
+  iconPosition?: "left" | "right";
+  variant?: ButtonVariant | string;
 }>();
 
 const getVariantColorSpecifics = (color: ButtonColor, variant?: ButtonVariant) => {
@@ -55,7 +55,7 @@ const getButtonClass = (color: ButtonColor, variant?: ButtonVariant, title?: str
   <!-- TODO: Drop shadow adjust -->
   <button
     class="box-content flex flex-row justify-center gap-2 rounded-lg font-body font-semibold text-base hover:drop-shadow"
-    :class="getButtonClass(color as ButtonColor, variant, title)"
+    :class="getButtonClass(color as ButtonColor, variant as ButtonVariant, title)"
   >
     <font-awesome-icon
       :icon="icon"

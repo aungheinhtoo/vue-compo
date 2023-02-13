@@ -6,10 +6,10 @@ const longText = "This is a paragraph of information with additional supporting 
 </script>
 <template>
   <div class="alerts">
-    <CustomAlert :title="shortText" :content="longText" :color="AlertColor.INFO" />
-    <CustomAlert :title="shortText" :content="longText" :color="AlertColor.WARNING" />
-    <CustomAlert :title="shortText" :content="longText" :color="AlertColor.ERROR" />
-    <CustomAlert :title="shortText" :content="longText" :color="AlertColor.SUCCESS" />
+    <CustomAlert :title="shortText" :content="longText" color="info" />
+    <CustomAlert :title="shortText" :content="longText" color="warning" />
+    <CustomAlert :title="shortText" :content="longText" color="error" />
+    <CustomAlert :title="shortText" :content="longText" color="success" />
   </div>
 </template>
 
