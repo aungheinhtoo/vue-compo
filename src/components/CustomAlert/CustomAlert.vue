@@ -1,12 +1,16 @@
 <script setup lang="ts">
 import CustomButton from '../CustomButton/CustomButton.vue';
-import { ButtonVariant, ButtonColor } from '../CustomButton/types';
+import { ButtonColor } from '../CustomButton/types';
 import { AlertColor } from "./types"
 
-defineProps<{
+const props = defineProps<{
   title?: string;
   color: AlertColor | string;
   content?: string;
+  filledButtonTitle?: string;
+  outlinedButtonTitle?: string;
+  filledButtonOnClick?: Function;
+  outlinedButtonOnClick?: Function;
 }>();
 const getIconClasses = (color: AlertColor) => {
   if (color === "info") {
@@ -31,6 +35,15 @@ const getAlertClasses = (color: AlertColor) => {
     return "outline-warning bg-warning-bg text-warning";
   }
 }
+
+const handleOutlinedClick = () => {
+  props.outlinedButtonOnClick ? props.outlinedButtonOnClick() : null;
+};
+
+const handleFilledClick = () => {
+  props.filledButtonOnClick ? props.filledButtonOnClick() : null;
+};
+
 </script>
 
 <template>
@@ -47,8 +60,8 @@ const getAlertClasses = (color: AlertColor) => {
           </div>
         </div>
         <div class="flex sm:flex-row flex-col items-start gap-4">
-          <CustomButton title="Action" :color="color === AlertColor.INFO ? ButtonColor.WARNING : color" variant="outlined" />
-          <CustomButton title="Action" :color="color === AlertColor.INFO ? ButtonColor.PRIMARY : color" variant="filled" />
+          <CustomButton title="Action" :color="color === AlertColor.INFO ? ButtonColor.WARNING : color" variant="outlined" :onClick="handleOutlinedClick"  />
+          <CustomButton title="Action" :color="color === AlertColor.INFO ? ButtonColor.PRIMARY : color" variant="filled" :onClick="handleFilledClick" />
         </div>
       </div>
           <font-awesome-icon icon="fa-solid fa-xmark" size="sm" fixed-width class="text-gray" />

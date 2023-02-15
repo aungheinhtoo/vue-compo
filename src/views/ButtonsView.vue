@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import CustomButton from "@/components/CustomButton/CustomButton.vue";
+function clickMe() {
+  console.log("hello!")
+}
 </script>
 
 <template>
@@ -11,6 +14,7 @@ import CustomButton from "@/components/CustomButton/CustomButton.vue";
           color="primary"
           icon="arrow-left"
           variant="filled"
+          :onClick="clickMe"
          />
         <CustomButton title="Action" color="primary"
           variant="filled" />

@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import { ButtonColor, ButtonVariant } from './types';
 // defineProps(["title", "color", "icon", "iconPosition", "variant"]);
-defineProps<{
+const props = defineProps<{
   title?: string;
   color: ButtonColor | string;
   icon?: string;
   iconPosition?: "left" | "right";
   variant?: ButtonVariant | string;
+  onClick?: Function;
 }>();
 
 const getVariantColorSpecifics = (color: ButtonColor, variant?: ButtonVariant) => {
@@ -49,6 +50,10 @@ const getPadding = (title?: string) => {
 const getButtonClass = (color: ButtonColor, variant?: ButtonVariant, title?: string) => {
   return `${getVariantColorSpecifics(color, variant)} ${getPadding(title)}`;
 };
+
+function handleOnClick() {
+  props.onClick ? props.onClick() : null;
+}
 </script>
 
 <template>
@@ -56,6 +61,7 @@ const getButtonClass = (color: ButtonColor, variant?: ButtonVariant, title?: str
   <button
     class="box-content flex flex-row justify-center gap-2 rounded-lg font-body font-semibold text-base hover:drop-shadow"
     :class="getButtonClass(color as ButtonColor, variant as ButtonVariant, title)"
+    @click="handleOnClick"
   >
     <font-awesome-icon
       :icon="icon"
