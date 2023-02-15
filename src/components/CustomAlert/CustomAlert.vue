@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import CustomButton from '../CustomButton/CustomButton.vue';
 import { ButtonColor } from '../CustomButton/types';
-import { AlertColor } from "./types"
+import { AlertColor } from "./types";
 
 const props = defineProps<{
   title?: string;
@@ -47,24 +47,34 @@ const handleFilledClick = () => {
 </script>
 
 <template>
-  <div class="flex outline outline-1 rounded-[4px]" :class="getAlertClasses(color as AlertColor)">
-    <div class="flex justify-around gap-2 m-4">
+  <div class="flex justify-between outline outline-1 rounded-[4px] w-9/12" :class="getAlertClasses(color as AlertColor)">
+    <div class="flex justify-between gap-2 w-full" :class="(title) ? 'm-4' : 'm-2'">
       <font-awesome-icon :icon="getIconClasses(color as AlertColor)" size="xl" fixed-width />
       <div class="flex flex-col gap-4">
         <div class="flex flex-col gap-2">
-          <div class="font-body text-base text-black-text font-semibold">
+          <div v-if="title" class="font-body text-base text-black-text font-semibold">
             {{ title }}
           </div>
-          <div class="font-body text-base text-black-text font-normal">
+          <div v-if="content" class="font-body text-base text-black-text font-normal">
             {{ content }}
           </div>
         </div>
-        <div class="flex sm:flex-row flex-col items-start gap-4">
-          <CustomButton title="Action" :color="color === AlertColor.INFO ? ButtonColor.WARNING : color" variant="outlined" :onClick="handleOutlinedClick"  />
-          <CustomButton title="Action" :color="color === AlertColor.INFO ? ButtonColor.PRIMARY : color" variant="filled" :onClick="handleFilledClick" />
+        <div v-if="filledButtonTitle || outlinedButtonTitle" class="flex sm:flex-row flex-col items-start gap-4">
+          <CustomButton
+            title="Action"
+            :color="color === AlertColor.INFO ? ButtonColor.WARNING : color"
+            variant="outlined"
+            :onClick="handleOutlinedClick"
+          />
+          <CustomButton
+            title="Action"
+            :color="color === AlertColor.INFO ? ButtonColor.PRIMARY : color"
+            variant="filled"
+            :onClick="handleFilledClick"
+          />
         </div>
       </div>
-          <font-awesome-icon icon="fa-solid fa-xmark" size="sm" fixed-width class="text-gray" />
+      <font-awesome-icon icon="fa-solid fa-xmark" size="sm" fixed-width class="text-gray" :class="(title && content) ? null : 'self-center'" />
     </div>
   </div>
 </template>
