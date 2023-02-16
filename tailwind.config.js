@@ -4,11 +4,11 @@ module.exports = {
   theme: {
     extend: {
       dropShadow: {
-        'custom': [
-          '0px 6px 10px rgba(0, 0, 0, 0.14)',
-          '0px 1px 18px rgba(0, 0, 0, 0.12)'
-        ]
-      }
+        custom: [
+          "0px 6px 10px rgba(0, 0, 0, 0.14)",
+          "0px 1px 18px rgba(0, 0, 0, 0.12)",
+        ],
+      },
     },
     fontFamily: {
       body: ['"Open Sans"'],
@@ -26,13 +26,13 @@ module.exports = {
       "warning-bg": "#FDF3E1",
       "success-bg": "#F8FFF2",
       "primary-hover": "#f5ab2b",
-      "secondary-hover": '#b74200',
-      "info-hover": '#1866b3',
-      "error-hover": '#a4281d',
-      "warning-hover": '#c14b00',
-      "success-hover": '#007500',
+      "secondary-hover": "#b74200",
+      "info-hover": "#1866b3",
+      "error-hover": "#a4281d",
+      "warning-hover": "#c14b00",
+      "success-hover": "#007500",
       "black-text": "#0C0D0D",
-      gray: "#566271"
+      gray: "#566271",
     },
   },
   plugins: [],

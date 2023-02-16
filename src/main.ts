@@ -19,8 +19,15 @@ import {
 import "./assets/main.css";
 
 const app = createApp(App);
-library.add(faArrowRight, faArrowLeft, faXmark, faCircleInfo, faCircleCheck,
-    faCircleExclamation, faTriangleExclamation);
+library.add(
+    faArrowRight,
+    faArrowLeft,
+    faXmark,
+    faCircleInfo,
+    faCircleCheck,
+    faCircleExclamation,
+    faTriangleExclamation
+);
 app.component("font-awesome-icon", FontAwesomeIcon);
 app.use(router);
 
