@@ -4,6 +4,7 @@
   "private": true,
   "main": "./dist/custom-components.js",
   "module": "./dist/custom-components.umd.js",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
@@ -55,6 +56,7 @@
     "tailwindcss": "^3.2.6",
     "typescript": "~4.7.4",
     "vite": "^4.0.0",
+    "vite-plugin-dts": "^2.0.0-beta.0",
     "vitest": "^0.25.6",
     "vue-tsc": "^1.0.12"
   }
