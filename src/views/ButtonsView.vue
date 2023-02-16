@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import CustomButton from "@/components/CustomButton/CustomButton.vue";
+// import { CustomButtonVue as CustomButton } from "../../dist/custom-components.mjs";
 function clickMe() {
     console.log("hello!");
 }

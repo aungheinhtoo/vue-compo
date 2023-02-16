@@ -10,7 +10,7 @@ import dts from 'vite-plugin-dts'
 export default defineConfig({
     plugins: [vue(), vueJsx(), dts({
         compilerOptions: {
-            target: 1,
+            target: 1, // ES5
         },
     })],
     resolve: {

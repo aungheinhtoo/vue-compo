@@ -2,16 +2,16 @@
   "name": "vue-compo",
   "version": "0.0.0",
   "private": true,
-  "main": "./dist/custom-components.js",
-  "module": "./dist/custom-components.umd.js",
-  "types": "./dist/index.d.ts",
+  "main": "./dist/custom-components.umd.cjs",
+  "module": "./dist/custom-components.js",
+  "types": "./dist/src/components/index.d.ts",
   "files": [
     "dist"
   ],
   "exports": {
     ".": {
       "import": "./dist/custom-components.js",
-      "require": "./dist/custom-components.umd.js"
+      "require": "./dist/custom-components.umd.cjs"
     }
   },
   "scripts": {
