@@ -57,9 +57,8 @@ function handleOnClick() {
 </script>
 
 <template>
-  <!-- TODO: Drop shadow adjust -->
   <button
-    class="box-content flex flex-row justify-center gap-2 rounded-lg font-body font-semibold text-base hover:drop-shadow"
+    class="box-content flex flex-row justify-center gap-2 rounded-lg font-body font-semibold text-base hover:drop-shadow-custom"
     :class="getButtonClass(color as ButtonColor, variant as ButtonVariant, title)"
     @click="handleOnClick"
   >

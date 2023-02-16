@@ -49,8 +49,13 @@ const handleFilledClick = () => {
 <template>
   <div class="flex justify-between outline outline-1 rounded-[4px] w-9/12" :class="getAlertClasses(color as AlertColor)">
     <div class="flex justify-between gap-2 w-full" :class="(title) ? 'm-4' : 'm-2'">
-      <font-awesome-icon :icon="getIconClasses(color as AlertColor)" size="xl" fixed-width />
-      <div class="flex flex-col gap-4">
+      <font-awesome-icon
+        :icon="getIconClasses(color as AlertColor)"
+        size="xl"
+        fixed-width
+        class="grow-0"
+      />
+      <div class="flex flex-col gap-4 grow">
         <div class="flex flex-col gap-2">
           <div v-if="title" class="font-body text-base text-black-text font-semibold">
             {{ title }}
@@ -74,7 +79,13 @@ const handleFilledClick = () => {
           />
         </div>
       </div>
-      <font-awesome-icon icon="fa-solid fa-xmark" size="sm" fixed-width class="text-gray" :class="(title && content) ? null : 'self-center'" />
+      <font-awesome-icon
+        icon="fa-solid fa-xmark"
+        size="sm"
+        fixed-width
+        class="text-gray grow-0 cursor-pointer"
+        :class="(title && content) ? null : 'self-center'"
+      />
     </div>
   </div>
 </template>

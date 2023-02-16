@@ -2,7 +2,14 @@
 module.exports = {
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      dropShadow: {
+        'custom': [
+          '0px 6px 10px rgba(0, 0, 0, 0.14)',
+          '0px 1px 18px rgba(0, 0, 0, 0.12)'
+        ]
+      }
+    },
     fontFamily: {
       body: ['"Open Sans"'],
     },
