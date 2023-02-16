@@ -70,13 +70,13 @@ function deleteComponent() {
                 <div class="flex flex-col gap-2">
                     <div
                         v-if="title"
-                        class="font-body text-base font-semibold text-black-text"
+                        class="font-body text-base font-semibold leading-6 text-black-text"
                     >
                         {{ title }}
                     </div>
                     <div
                         v-if="content"
-                        class="font-body text-base font-normal text-black-text"
+                        class="font-body text-base font-normal leading-6 text-black-text"
                     >
                         {{ content }}
                     </div>
