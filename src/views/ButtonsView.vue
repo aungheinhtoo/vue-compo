@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import CustomButton from "@/components/CustomButton/CustomButton.vue";
-// import { CustomButtonVue as CustomButton } from "../../dist/custom-components.mjs";
-function clickMe() {
+function clickHandler() {
     console.log("hello!");
 }
 </script>
@@ -15,7 +14,7 @@ function clickMe() {
                     color="primary"
                     icon="arrow-left"
                     variant="filled"
-                    :onClick="clickMe"
+                    :onClick="clickHandler"
                 />
                 <CustomButton title="Action" color="primary" variant="filled" />
                 <CustomButton
@@ -24,12 +23,14 @@ function clickMe() {
                     icon="arrow-right"
                     icon-position="right"
                     variant="filled"
+                    :onClick="clickHandler"
                 />
                 <CustomButton
                     color="primary"
                     icon="fa-solid fa-arrow-left"
                     icon-position="right"
                     variant="filled"
+                    :onClick="clickHandler"
                 />
             </div>
             <div class="flex gap-3">
@@ -38,11 +39,13 @@ function clickMe() {
                     color="warning"
                     icon="arrow-left"
                     variant="outlined"
+                    :onClick="clickHandler"
                 />
                 <CustomButton
                     title="Action"
                     color="warning"
                     variant="outlined"
+                    :onClick="clickHandler"
                 />
                 <CustomButton
                     title="Action"
@@ -50,12 +53,14 @@ function clickMe() {
                     icon="arrow-right"
                     icon-position="right"
                     variant="outlined"
+                    :onClick="clickHandler"
                 />
                 <CustomButton
                     color="warning"
                     icon="arrow-right"
                     icon-position="right"
                     variant="outlined"
+                    :onClick="clickHandler"
                 />
             </div>
         </div>

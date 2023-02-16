@@ -9,3 +9,4 @@
 ### TODOs
 
 1. Consider and research better format for props.
+2. Incorporate tests for each component using `@testing-library/vue` and overall with `storybook`.
