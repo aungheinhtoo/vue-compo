@@ -2,9 +2,21 @@
   "name": "vue-compo",
   "version": "0.0.0",
   "private": true,
+  "main": "./dist/custom-components.js",
+  "module": "./dist/custom-components.umd.js",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/custom-components.js",
+      "require": "./dist/custom-components.umd.js"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check build-only",
+    "build:clean": "rm -rf ./dist && npm run build",
     "preview": "vite preview",
     "test:unit": "vitest --environment jsdom --root src/",
     "build-only": "vite build",
